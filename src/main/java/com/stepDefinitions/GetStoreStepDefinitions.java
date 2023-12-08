@@ -7,12 +7,13 @@ import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.*;
 
+import com.base.TestBase;
 import com.swaroop.utils.TestContext;
 
-public class GetStoreStepDefinitions {
+public class GetStoreStepDefinitions extends TestBase{
 
-	Response response;
-	TestContext context = new TestContext();
+	
+	
 
 	@Given("the api is available")
 	public void the_api_is_available() {
@@ -28,7 +29,7 @@ public class GetStoreStepDefinitions {
 
 	@Then("the response should come with a status code of {int}")
 	public void the_response_should_come_with_a_status_code_of(Integer statusCode) {
-		response.then().statusCode(statusCode);
+		context.getResponse().then().statusCode(statusCode);
 	}
 	
 	

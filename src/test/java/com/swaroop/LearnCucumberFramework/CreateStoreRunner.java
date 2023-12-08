@@ -1,18 +1,20 @@
 package com.swaroop.LearnCucumberFramework;
 
+import org.junit.runner.RunWith;
+
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		plugin = {"pretty", "html:target/cucumber"},
-		features = "src/test/resources/features/GetStores.feature",
+		features = "src/test/resources/features/CreateStore.feature",
 		glue = {"com.stepDefinitions","com.base"},
-		tags = "not @getAllStores and not @getStoreById",
+		tags = "@createStore",
+		dryRun = false,
 		monochrome = true
 		)
 
-public class TestRunner {
+public class CreateStoreRunner {
 
 }
